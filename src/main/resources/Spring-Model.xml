@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id= "personDao" class="daos.PersonDao"/>
+	<bean id= "belongingDao" class="daos.BelongingDao"/>
+
+	<bean id="person" class="entities.Person" scope ="prototype">
+		<property name="id" value="1"/>
+		<property name="name" value="Nhat Quang"/>
+	</bean>
+
+	<bean id="belonging" class="entities.Belonging" scope="prototype">
+		<property name="id" value="1"/>
+	</bean>
+
+</beans>

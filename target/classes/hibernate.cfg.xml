@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/spring_hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">nhatquang</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <mapping class="entities.Person"/>
+        <mapping class="entities.Belonging"/>
+        
+        <!--
+
+            <hibernate-mapping>
+            <class name="entities.Person" table="Persons" catalog="spring_hibernate">
+                <id name="id" type="java.lang.Integer">
+                    <column name="id" />
+                </id>
+                <list name="name" type="string">
+                    <column name="person_name" length="50" not-null="true"/>
+                    <one-to-many class="entities.Belonging"/>
+                </list>
+            </class>
+
+            <class name="entities.Belonging" table="Belongings" catalog="spring_hibernate">
+                <id name="id" type="java.lang.Integer">
+                    <column name="id" />
+                </id>
+                <property name="person_id" type="java.lang.Integer">
+                    <column name="person_id" not-null="true"/>
+                    <many-to-one name="service" 
+                                 class=""
+                                 column="SERVICE_ID"
+                                 cascade="save-update">
+                    </many-to-one>
+                </property>
+            </class>
+        </hibernate-mapping>
+            
+        <property name="annotatedClasses">
+            <list>
+                <value>entities.Person</value>
+                <value>entities.Belonging</value>
+            </list>
+        </property>-->
+    </session-factory>
+</hibernate-configuration>
+
